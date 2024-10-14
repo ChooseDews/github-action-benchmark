@@ -329,11 +329,13 @@ function extractCargoResult(output: string): BenchmarkResult[] {
         let range = parseFloat(m[3].replace(reComma, ''));
         let unit = 'ns/iter';
 
-        if (value >= 1_000_000_000) { // 1 s or more
+        if (value >= 1_000_000_000) { 
+            // 1 s or more
             value /= 1_000_000_000;
             range /= 1_000_000_000;
             unit = 's/iter';
-        } else if (value >= 1_000_000) { // 1 ms or more
+        } else if (value >= 1_000_000) { 
+            // 1 ms or more
             value /= 1_000_000;
             range /= 1_000_000;
             unit = 'ms/iter';
